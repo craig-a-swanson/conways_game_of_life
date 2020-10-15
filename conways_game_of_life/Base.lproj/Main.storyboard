@@ -64,9 +64,6 @@
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="top" secondItem="hgX-jL-GLC" secondAttribute="top" constant="75" id="vvv-qo-ZZp"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cellGrid" destination="3R8-Ns-d6T" id="LVI-cb-pqu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32S-CN-oa3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
