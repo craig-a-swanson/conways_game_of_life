@@ -9,10 +9,13 @@ import UIKit
 
 class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // MARK: - Properties
     var testGrid = Array(repeating: 1, count: 25)
     
+    // MARK: - Outlets
     @IBOutlet var collectionView: UICollectionView!
 
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,6 @@ class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let cellState = testGrid[indexPath.item]
         if cellState == 1 {
-            print(cellState)
             cell.backgroundColor = .blue
         } else {
             cell.backgroundColor = .red
@@ -41,16 +43,4 @@ class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICol
         testGrid[indexPath.item] = 2
         collectionView.reloadItems(at: [indexPath])
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -14,6 +14,7 @@
 		449834472537E4ED005F6882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449834462537E4ED005F6882 /* Assets.xcassets */; };
 		4498344A2537E4ED005F6882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449834482537E4ED005F6882 /* LaunchScreen.storyboard */; };
 		449834532537EBC3005F6882 /* BoardGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449834522537EBC3005F6882 /* BoardGridViewController.swift */; };
+		449834572537FCF2005F6882 /* LifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449834562537FCF2005F6882 /* LifeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		449834492537E4ED005F6882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4498344B2537E4ED005F6882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449834522537EBC3005F6882 /* BoardGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGridViewController.swift; sourceTree = "<group>"; };
+		449834562537FCF2005F6882 /* LifeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				449834462537E4ED005F6882 /* Assets.xcassets */,
 				449834482537E4ED005F6882 /* LaunchScreen.storyboard */,
 				4498344B2537E4ED005F6882 /* Info.plist */,
+				449834562537FCF2005F6882 /* LifeCell.swift */,
 			);
 			path = conways_game_of_life;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449834572537FCF2005F6882 /* LifeCell.swift in Sources */,
 				449834422537E4EC005F6882 /* ViewController.swift in Sources */,
 				449834532537EBC3005F6882 /* BoardGridViewController.swift in Sources */,
 				4498343E2537E4EC005F6882 /* AppDelegate.swift in Sources */,
