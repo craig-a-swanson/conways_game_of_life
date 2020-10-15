@@ -10,7 +10,7 @@ import UIKit
 class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // MARK: - Properties
-    var testGrid = Array(repeating: 1, count: 25)
+    var testGrid = Array(repeating: 1, count: 25*25)
     
     // MARK: - Outlets
     @IBOutlet var collectionView: UICollectionView!
