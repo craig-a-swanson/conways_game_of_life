@@ -9,7 +9,7 @@ import UIKit
 
 class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    let testGrid = Array(repeating: 1, count: 25)
+    var testGrid = Array(repeating: 1, count: 25)
     
     @IBOutlet var collectionView: UICollectionView!
 
@@ -35,6 +35,11 @@ class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.backgroundColor = .red
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        testGrid[indexPath.item] = 2
+        collectionView.reloadItems(at: [indexPath])
     }
     
 
