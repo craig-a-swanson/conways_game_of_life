@@ -9,33 +9,38 @@ import UIKit
 
 class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // MARK: - Properties
+    var testGrid = Array(repeating: 1, count: 25)
     
+    // MARK: - Outlets
     @IBOutlet var collectionView: UICollectionView!
 
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        collectionView.backgroundColor = .cyan
     }
     
     // MARK: - UICollection View Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return testGrid.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lifeCell", for: indexPath)
+        
+        let cellState = testGrid[indexPath.item]
+        if cellState == 1 {
+            cell.backgroundColor = .blue
+        } else {
+            cell.backgroundColor = .red
+        }
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        testGrid[indexPath.item] = 2
+        collectionView.reloadItems(at: [indexPath])
     }
-    */
-
 }
