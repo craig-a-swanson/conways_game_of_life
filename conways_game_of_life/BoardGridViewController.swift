@@ -9,22 +9,32 @@ import UIKit
 
 class BoardGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    let testGrid = Array(repeating: 1, count: 25)
     
     @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        collectionView.backgroundColor = .cyan
     }
     
     // MARK: - UICollection View Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return testGrid.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lifeCell", for: indexPath)
+        
+        let cellState = testGrid[indexPath.item]
+        if cellState == 1 {
+            print(cellState)
+            cell.backgroundColor = .blue
+        } else {
+            cell.backgroundColor = .red
+        }
+        return cell
     }
     
 
