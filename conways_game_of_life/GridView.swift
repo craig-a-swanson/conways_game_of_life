@@ -11,6 +11,7 @@ import UIKit
 class GridView: UIView {
 
     private let cellsPerRow: Int = 5
+    private let cellArray: [Bool] = [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,10 +28,16 @@ class GridView: UIView {
         let gridSize: CGFloat = rect.size.width
         let cellSize: CGFloat = gridSize / CGFloat(cellsPerRow)
 
+        var index = 0
         for row in 0..<cellsPerRow {
             for column in 0..<cellsPerRow {
                 let cellSquare = CGRect(x: CGFloat(CGFloat(column) * cellSize), y: CGFloat(CGFloat(row) * cellSize), width: cellSize, height: cellSize)
-                addRectangle(addRect: cellSquare, withColor: UIColor.black)
+                var cellColor = UIColor.clear
+                if cellArray[index] {
+                    cellColor = UIColor.black
+                }
+                index += 1
+                addRectangle(addRect: cellSquare, withColor: cellColor)
             }
         }
     }
