@@ -16,6 +16,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func updateCellState(_ sender: GridView) {
+        
+    }
 
     /*
     // MARK: - Navigation

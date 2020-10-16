@@ -8,19 +8,16 @@
 import UIKit
 
 @IBDesignable
-class GridView: UIView {
+class GridView: UIControl {
 
-    private let cellsPerRow: Int = 5
-    private let cellArray: [Bool] = [false, true, false, true, false,
-                                     true, false, true, false, true,
-                                     false, true, false, true, false,
-                                     true, false, true, false, true,
-                                     false, true, false, true, false]
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.clear
-    }
+    private let cellsPerRow: Int = 25
+    private var currentGenArray: [Bool] = []
+    private var labelArray: [UILabel] = []
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        backgroundColor = UIColor.clear
+//    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -29,6 +26,7 @@ class GridView: UIView {
 
     override func draw(_ rect: CGRect) {
 
+        currentGenArray = Array(repeating: false, count: cellsPerRow * cellsPerRow)
         let gridSize: CGFloat = rect.size.width
         let cellSize: CGFloat = gridSize / CGFloat(cellsPerRow)
 
@@ -41,12 +39,15 @@ class GridView: UIView {
                 newCellLabel.tag = Int((row + 1) * column)
 
                 var cellColor = UIColor.clear
-                if cellArray[index] {
+                if currentGenArray[index] {
                     cellColor = UIColor.black
                 }
                 index += 1
                 newCellLabel.backgroundColor = cellColor
+                newCellLabel.layer.borderWidth = 0.5
+                newCellLabel.layer.borderColor = UIColor.darkGray.cgColor
                 addSubview(newCellLabel)
+                labelArray.append(newCellLabel)
             }
         }
 //        for row in 0..<cellsPerRow {
@@ -56,7 +57,7 @@ class GridView: UIView {
 //                                        width: cellSize,
 //                                        height: cellSize)
 //                var cellColor = UIColor.clear
-//                if cellArray[index] {
+//                if currentGenArray[index] {
 //                    cellColor = UIColor.black
 //                }
 //                index += 1
@@ -65,12 +66,71 @@ class GridView: UIView {
 //        }
     }
 
-    func addRectangle(addRect rectangle: CGRect, withColor color: UIColor) {
-        if let context = UIGraphicsGetCurrentContext() {
-            context.addRect(rectangle)
-            context.setFillColor(color.cgColor)
-            context.fillPath()
+//    func addRectangle(addRect rectangle: CGRect, withColor color: UIColor) {
+//        if let context = UIGraphicsGetCurrentContext() {
+//            context.addRect(rectangle)
+//            context.setFillColor(color.cgColor)
+//            context.fillPath()
+//        }
+//    }
+    
+    private func initialSetup(at touch: UITouch) {
+        let touchPoint = touch.location(in: self)
+        
+        for cell in labelArray {
+            if cell.frame.contains(touchPoint) {
+                let cellIndex = cell.tag
+                currentGenArray[cellIndex].toggle()
+                if cell.backgroundColor == UIColor.clear {
+                    cell.backgroundColor = UIColor.black
+                } else {
+                    cell.backgroundColor = UIColor.clear
+                }
+            }
+        }
+    }
+    
+    // MARK: - Tracking Functions
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+//        initialSetup(at: touch)
+//        sendActions(for: .touchDown)
+        
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        
+        if self.bounds.contains(touchPoint) {
+//            initialSetup(at: touch)
+//            sendActions(for: [.touchDragInside, .valueChanged])
+        } else {
+            sendActions(for: .touchDragOutside)
+        }
+        
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer {
+            super.endTracking(touch, with: event)
+        }
+        guard let touch = touch else { return }
+        let touchPoint = touch.location(in: self)
+        
+        if self.bounds.contains(touchPoint) {
+            initialSetup(at: touch)
+            sendActions(for: [.touchUpInside, .valueChanged])
+        } else {
+            sendActions(for: .touchUpOutside)
         }
     }
 
+    override func cancelTracking(with event: UIEvent?) {
+        defer {
+            super.cancelTracking(with: event)
+        }
+        
+        sendActions(for: .touchCancel)
+    }
 }
