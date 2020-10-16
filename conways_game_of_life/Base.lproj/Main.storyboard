@@ -26,6 +26,14 @@
                                     <segue destination="apU-tr-Frw" kind="embed" id="eCR-3B-OcY"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOH-BS-Jhv">
+                                <rect key="frame" x="185" y="552" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="toggle"/>
+                                <connections>
+                                    <action selector="updateGrid:" destination="BmQ-gW-3Gx" eventType="touchUpInside" id="req-o4-OKo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,6 +45,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="BmQ-gW-3Gx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="139" y="89"/>
         </scene>
@@ -55,6 +64,14 @@
                                     <constraint firstAttribute="width" secondItem="3R8-Ns-d6T" secondAttribute="height" multiplier="1:1" id="XX8-Mg-5Cf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG2-NP-T05">
+                                <rect key="frame" x="185" y="538" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="toggle"/>
+                                <connections>
+                                    <action selector="updateGrid:" destination="ncU-e5-qZc" eventType="touchUpInside" id="QDS-zV-UJI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgX-jL-GLC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,6 +81,9 @@
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="top" secondItem="hgX-jL-GLC" secondAttribute="top" constant="75" id="vvv-qo-ZZp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cellGrid" destination="3R8-Ns-d6T" id="7SD-ti-wBN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32S-CN-oa3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

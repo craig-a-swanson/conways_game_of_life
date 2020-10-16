@@ -19,7 +19,10 @@ class MainViewController: UIViewController {
     @IBAction func updateCellState(_ sender: GridView) {
         
     }
-
+    
+    @IBAction func updateGrid(_ sender: Any) {
+        cellGrid.updateGrid()
+    }
     /*
     // MARK: - Navigation
 

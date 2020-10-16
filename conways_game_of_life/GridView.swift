@@ -36,7 +36,7 @@ class GridView: UIControl {
 //                create a row of labels with the appropriate size and background color
 //                set the tag on the label equal to Int(row * column)
                 let newCellLabel = UILabel(frame: CGRect(x: column * cellSize, y: row * cellSize, width: cellSize, height: cellSize))
-                newCellLabel.tag = Int((row + 1) * column)
+                newCellLabel.tag = Int((row * 25) + column)
 
                 var cellColor = UIColor.clear
                 if currentGenArray[index] {
@@ -86,6 +86,18 @@ class GridView: UIControl {
                 } else {
                     cell.backgroundColor = UIColor.clear
                 }
+            }
+        }
+    }
+    
+    func updateGrid() {
+        for label in labelArray {
+            let cellIndex = label.tag
+            currentGenArray[cellIndex].toggle()
+            if currentGenArray[cellIndex] {
+                label.backgroundColor = .black
+            } else {
+                label.backgroundColor = .clear
             }
         }
     }
