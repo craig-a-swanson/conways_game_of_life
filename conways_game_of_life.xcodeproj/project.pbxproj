@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		44594D892538A66400583717 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44594D882538A66400583717 /* MainViewController.swift */; };
 		44594D8C2538A6A100583717 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44594D8B2538A6A100583717 /* GridView.swift */; };
+		44594D92253A404000583717 /* CellGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44594D91253A404000583717 /* CellGridController.swift */; };
 		4498343E2537E4EC005F6882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498343D2537E4EC005F6882 /* AppDelegate.swift */; };
 		449834402537E4EC005F6882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498343F2537E4EC005F6882 /* SceneDelegate.swift */; };
 		449834422537E4EC005F6882 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449834412537E4EC005F6882 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		44594D882538A66400583717 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		44594D8B2538A6A100583717 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		44594D91253A404000583717 /* CellGridController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGridController.swift; sourceTree = "<group>"; };
 		4498343A2537E4EC005F6882 /* conways_game_of_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = conways_game_of_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498343D2537E4EC005F6882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4498343F2537E4EC005F6882 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44594D8F253A3FFA00583717 /* CollectionViewSolution */ = {
+			isa = PBXGroup;
+			children = (
+				449834412537E4EC005F6882 /* ViewController.swift */,
+				449834522537EBC3005F6882 /* BoardGridViewController.swift */,
+			);
+			path = CollectionViewSolution;
+			sourceTree = "<group>";
+		};
 		449834312537E4EC005F6882 = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +78,8 @@
 				4498343D2537E4EC005F6882 /* AppDelegate.swift */,
 				4498343F2537E4EC005F6882 /* SceneDelegate.swift */,
 				449834562537FCF2005F6882 /* LifeCell.swift */,
-				449834412537E4EC005F6882 /* ViewController.swift */,
-				449834522537EBC3005F6882 /* BoardGridViewController.swift */,
+				44594D8F253A3FFA00583717 /* CollectionViewSolution */,
+				44594D91253A404000583717 /* CellGridController.swift */,
 				44594D882538A66400583717 /* MainViewController.swift */,
 				44594D8B2538A6A100583717 /* GridView.swift */,
 				449834432537E4EC005F6882 /* Main.storyboard */,
@@ -154,6 +165,7 @@
 				449834532537EBC3005F6882 /* BoardGridViewController.swift in Sources */,
 				44594D8C2538A6A100583717 /* GridView.swift in Sources */,
 				44594D892538A66400583717 /* MainViewController.swift in Sources */,
+				44594D92253A404000583717 /* CellGridController.swift in Sources */,
 				4498343E2537E4EC005F6882 /* AppDelegate.swift in Sources */,
 				449834402537E4EC005F6882 /* SceneDelegate.swift in Sources */,
 			);
