@@ -29,28 +29,35 @@ class CellGridController {
     }
 
     func buildNextGenArray() {
+        // check to see if the result of index - <number> is negative; if so,
+        // modify that result to work with the array.
+        // check to see if the result of index + <number> is greater than count;
+        // if so, modify that result to work with the array.
+        // check to see if current index is at the left side or right side;
+        // if so, modify the result of index +/- number to work with the array.
+        
         for (index, element) in currentGenArray.enumerated() {
             var aliveCount = 0
-            if index >= cellsPerRow {
+            
+            if (index - cellsPerRow - 1) >= 0 && (index + cellsPerRow + 1) < currentGenArray.count {
+                currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
                 currentGenArray[index - cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // N
-            }
-            if index % cellsPerRow != 0 {
+                currentGenArray[index - (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NE
+                currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
+                currentGenArray[index + (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SE
+                currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
+                currentGenArray[index + (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SW
                 currentGenArray[index - 1] ? (aliveCount += 1) : (aliveCount += 0)                  // W
             }
-            if (index + 1) % cellsPerRow != 0 {
-                currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
-            }
-            if index < ((cellsPerRow - 1) * cellsPerRow) {
-                currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
-            }
-            currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
-            currentGenArray[index - cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // N
-            currentGenArray[index - (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NE
-            currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
-            currentGenArray[index + (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SE
-            currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
-            currentGenArray[index + (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SW
-            currentGenArray[index - 1] ? (aliveCount += 1) : (aliveCount += 0)                  // W
+            
+//            currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
+//            currentGenArray[index - cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // N
+//            currentGenArray[index - (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NE
+//            currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
+//            currentGenArray[index + (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SE
+//            currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
+//            currentGenArray[index + (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SW
+//            currentGenArray[index - 1] ? (aliveCount += 1) : (aliveCount += 0)                  // W
 
             nextGenArray[index] = aliveCount
         }

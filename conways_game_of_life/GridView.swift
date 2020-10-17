@@ -99,9 +99,11 @@ class GridView: UIControl {
     
     /// Used to update the grid to the current generation of life; iterates through each cell and checks Bool value
     func updateGrid() {
+        cellGridController.buildNextGenArray()
+        cellGridController.buildCurrentGenArray()
         for label in labelArray {
             let cellIndex = label.tag
-            cellGridController.currentGenArray[cellIndex].toggle()     // TODO: remove for production
+//            cellGridController.currentGenArray[cellIndex].toggle()     // TODO: remove for production
             if cellGridController.currentGenArray[cellIndex] {
                 label.backgroundColor = .black
             } else {
