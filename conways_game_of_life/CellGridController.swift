@@ -47,16 +47,73 @@ class CellGridController {
             let south = index + cellsPerRow
             let southwest = index + (cellsPerRow - 1)
             let west = index - 1
-            
-            if (index - cellsPerRow - 1) >= 0 && (index + cellsPerRow + 1) < currentGenArray.count {
-                currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
-                currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
-                currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+
+            // special case for top left corner
+            if index == 0 {
+                currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[southeast] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            // special case for top row excluding the two corners
+            if index > 0 && index <= (cellsPerRow - 2) {
                 currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[southeast] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[southwest] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            // special case for top right corner
+            if index == (cellsPerRow - 1) {
+                currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[southwest] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            // special case for bottom left corner
+            if index == (currentGenArray.count - cellsPerRow - 1) {
+                currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            // special case for bottom row excluding two corners
+            if index > (currentGenArray.count - cellsPerRow - 1) && index < (currentGenArray.count - 1) {
+                currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            // special case for bottom right corner
+            if index == currentGenArray.count {
+                currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+            }
+            
+            if index >= cellsPerRow && index <= (currentGenArray.count - cellsPerRow - 1) {
+                // case for left column
+                if index % cellsPerRow == 0 {
+                    currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[southeast] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+                // case for right column
+                } else if (index + 1) % cellsPerRow == 0 {
+                    currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[southwest] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+                } else {
+                    currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[southeast] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[southwest] ? (aliveCount += 1) : (aliveCount += 0)
+                    currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
+                }
             }
             
 //            currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
