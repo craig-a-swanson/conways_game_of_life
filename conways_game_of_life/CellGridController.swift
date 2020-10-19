@@ -13,6 +13,7 @@ class CellGridController {
     var nextGenArray: [Int] = Array(repeating: 0, count: 25*25)
     var currentGenArray: [Bool] = Array(repeating: false, count: 25*25)
 
+    /// Builds the array for the current generation of cells using the values from the next generation array
     func buildCurrentGenArray() {
         for (index, element) in nextGenArray.enumerated() {
             switch element {
@@ -28,6 +29,7 @@ class CellGridController {
         }
     }
 
+    /// Builds the array for the next generation of cells using the values from the current generation array
     func buildNextGenArray() {
         // check to see if the result of index - <number> is negative; if so,
         // modify that result to work with the array.
@@ -36,7 +38,7 @@ class CellGridController {
         // check to see if current index is at the left side or right side;
         // if so, modify the result of index +/- number to work with the array.
         
-        for (index, element) in currentGenArray.enumerated() {
+        for (index, _) in currentGenArray.enumerated() {
             var aliveCount = 0
             
             let northwest = index - (cellsPerRow + 1)

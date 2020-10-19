@@ -11,12 +11,8 @@ import UIKit
 class GridView: UIControl {
 
     // MARK: - Properties
-
     var cellGridController = CellGridController()
-    // Specify size of grid
-//    private let cellsPerRow: Int = 25
-    // currentGenArray is calculated from nextGenArray and is true (alive) or false (dead)
-//    private var currentGenArray: [Bool] = []
+
     // array of labels used to change colors and keep track of indexes via labels' tag properties
     private var labelArray: [UILabel] = []
 
@@ -103,7 +99,6 @@ class GridView: UIControl {
         cellGridController.buildCurrentGenArray()
         for label in labelArray {
             let cellIndex = label.tag
-//            cellGridController.currentGenArray[cellIndex].toggle()     // TODO: remove for production
             if cellGridController.currentGenArray[cellIndex] {
                 label.backgroundColor = .black
             } else {
