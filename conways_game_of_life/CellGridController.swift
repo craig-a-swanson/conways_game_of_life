@@ -39,15 +39,24 @@ class CellGridController {
         for (index, element) in currentGenArray.enumerated() {
             var aliveCount = 0
             
+            let northwest = index - (cellsPerRow + 1)
+            let north = index - cellsPerRow
+            let northeast = index - (cellsPerRow - 1)
+            let east = index + 1
+            let southeast = index + (cellsPerRow + 1)
+            let south = index + cellsPerRow
+            let southwest = index + (cellsPerRow - 1)
+            let west = index - 1
+            
             if (index - cellsPerRow - 1) >= 0 && (index + cellsPerRow + 1) < currentGenArray.count {
-                currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
-                currentGenArray[index - cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // N
-                currentGenArray[index - (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NE
-                currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
-                currentGenArray[index + (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SE
-                currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
-                currentGenArray[index + (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SW
-                currentGenArray[index - 1] ? (aliveCount += 1) : (aliveCount += 0)                  // W
+                currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[southeast] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[south] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[southwest] ? (aliveCount += 1) : (aliveCount += 0)
+                currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
             }
             
 //            currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
