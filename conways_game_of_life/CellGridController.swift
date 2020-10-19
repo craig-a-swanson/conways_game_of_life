@@ -69,13 +69,13 @@ class CellGridController {
                 currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
             }
             // special case for bottom left corner
-            if index == (currentGenArray.count - cellsPerRow - 1) {
+            if index == (currentGenArray.count - cellsPerRow) {
                 currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[east] ? (aliveCount += 1) : (aliveCount += 0)
             }
             // special case for bottom row excluding two corners
-            if index > (currentGenArray.count - cellsPerRow - 1) && index < (currentGenArray.count - 1) {
+            if index > (currentGenArray.count - cellsPerRow) && index < (currentGenArray.count - 1) {
                 currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[northeast] ? (aliveCount += 1) : (aliveCount += 0)
@@ -83,12 +83,13 @@ class CellGridController {
                 currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
             }
             // special case for bottom right corner
-            if index == currentGenArray.count {
+            if index == currentGenArray.count - 1 {
                 currentGenArray[northwest] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[north] ? (aliveCount += 1) : (aliveCount += 0)
                 currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
             }
-            
+
+
             if index >= cellsPerRow && index <= (currentGenArray.count - cellsPerRow - 1) {
                 // case for left column
                 if index % cellsPerRow == 0 {
@@ -115,16 +116,6 @@ class CellGridController {
                     currentGenArray[west] ? (aliveCount += 1) : (aliveCount += 0)
                 }
             }
-            
-//            currentGenArray[index - (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NW
-//            currentGenArray[index - cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // N
-//            currentGenArray[index - (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // NE
-//            currentGenArray[index + 1] ? (aliveCount += 1) : (aliveCount += 0)                  // E
-//            currentGenArray[index + (cellsPerRow + 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SE
-//            currentGenArray[index + cellsPerRow] ? (aliveCount += 1) : (aliveCount += 0)        // S
-//            currentGenArray[index + (cellsPerRow - 1)] ? (aliveCount += 1) : (aliveCount += 0)  // SW
-//            currentGenArray[index - 1] ? (aliveCount += 1) : (aliveCount += 0)                  // W
-
             nextGenArray[index] = aliveCount
         }
     }
