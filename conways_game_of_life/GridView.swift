@@ -93,7 +93,7 @@ class GridView: UIControl {
     }
     
     /// Used to update the grid to the current generation of life; iterates through each cell and checks Bool value
-    func updateGrid() {
+    @objc func updateGrid() {
         cellGridController.buildNextGenArray()
         cellGridController.buildCurrentGenArray()
         for label in labelArray {
@@ -104,6 +104,11 @@ class GridView: UIControl {
                 label.backgroundColor = .clear
             }
         }
+    }
+    
+    func clearGrid() {
+        cellGridController.currentGenArray = Array(repeating: false, count: cellGridController.cellsPerRow * cellGridController.cellsPerRow)
+        updateGrid()
     }
     
     // MARK: - Tracking Functions
