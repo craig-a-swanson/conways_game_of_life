@@ -92,9 +92,6 @@ class GridView: UIControl {
         }
     }
     
-    // Use a timer to call the updateGrid() method.
-    // When start is tapped, repeat until paused.
-    // When step is tapped, repeat is false.
     /// Used to update the grid to the current generation of life; iterates through each cell and checks Bool value
     @objc func updateGrid() {
         cellGridController.buildNextGenArray()
