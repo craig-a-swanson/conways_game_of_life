@@ -16,10 +16,12 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet var cellGrid: GridView!
+    @IBOutlet var generationCountLabel: UILabel!
 
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        generationCountLabel.text = String(generation)
     }
     
     // MARK: - Actions
@@ -51,6 +53,7 @@ class MainViewController: UIViewController {
         }
         generation = 0
         cellGrid.clearGrid()
+        generationCountLabel.text = String(generation)
     }
     
     // MARK: - Methods
@@ -59,6 +62,7 @@ class MainViewController: UIViewController {
         cellGrid.updateGrid()
         // increment generation number
         generation += 1
+        generationCountLabel.text = String(generation)
     }
     /*
     // MARK: - Navigation

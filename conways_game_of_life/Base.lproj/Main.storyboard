@@ -49,6 +49,41 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYc-JM-89m">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" image="gear" catalog="system" id="hvD-O6-1IL"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0pv-7a-y4v"/>
+                                    <barButtonItem title="Item" image="info.circle" catalog="system" id="y1j-KS-nen"/>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-ax-l82">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Conway's Game of Life" id="8SS-mT-W1B"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9BV-yZ-k63">
+                                <rect key="frame" x="40" y="762.5" width="334" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Generation Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-TN-HS2">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zP-Nz-RMb">
+                                        <rect key="frame" x="280" y="0.0" width="54" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgX-jL-GLC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,14 +91,21 @@
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="centerX" secondItem="D7N-Uj-Akk" secondAttribute="centerX" id="856-6l-oK4"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="30" id="BPK-gS-G99"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="QrY-NF-7b3" secondAttribute="trailing" constant="30" id="F5R-t2-96N"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="gYc-JM-89m" secondAttribute="bottom" id="Jvp-rh-rBa"/>
+                            <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="9BV-yZ-k63" secondAttribute="trailing" constant="40" id="Ogo-yU-2Nu"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="20" id="RXA-qn-wka"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="top" secondItem="3R8-Ns-d6T" secondAttribute="bottom" constant="30" id="VRM-sl-yaw"/>
+                            <constraint firstItem="gYc-JM-89m" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" id="b6M-u1-aBb"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="3R8-Ns-d6T" secondAttribute="trailing" constant="20" id="dOY-tK-JKC"/>
+                            <constraint firstItem="9BV-yZ-k63" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="40" id="lH2-sr-2RR"/>
+                            <constraint firstItem="gYc-JM-89m" firstAttribute="top" secondItem="9BV-yZ-k63" secondAttribute="bottom" constant="30" id="rXL-8k-QdL"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="top" secondItem="hgX-jL-GLC" secondAttribute="top" constant="75" id="vvv-qo-ZZp"/>
+                            <constraint firstItem="gYc-JM-89m" firstAttribute="trailing" secondItem="hgX-jL-GLC" secondAttribute="trailing" id="zUJ-fk-CrS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cellGrid" destination="3R8-Ns-d6T" id="7SD-ti-wBN"/>
+                        <outlet property="generationCountLabel" destination="6zP-Nz-RMb" id="mdP-Dh-LHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32S-CN-oa3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,6 +114,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
