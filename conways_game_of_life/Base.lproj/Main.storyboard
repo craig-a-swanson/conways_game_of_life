@@ -54,14 +54,18 @@
                                 <items>
                                     <barButtonItem title="Item" image="gear" catalog="system" id="hvD-O6-1IL"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0pv-7a-y4v"/>
-                                    <barButtonItem title="Item" image="info.circle" catalog="system" id="y1j-KS-nen"/>
+                                    <barButtonItem title="Item" image="info.circle" catalog="system" id="y1j-KS-nen">
+                                        <connections>
+                                            <segue destination="qEv-6u-fke" kind="presentation" id="fxL-TN-VWo"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-ax-l82">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-ax-l82">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Conway's Game of Life" id="8SS-mT-W1B"/>
@@ -70,7 +74,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9BV-yZ-k63">
                                 <rect key="frame" x="40" y="762.5" width="334" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Generation Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-TN-HS2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Generation Number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-TN-HS2">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -111,6 +115,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32S-CN-oa3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="726"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Gm-y5-AWs">
+            <objects>
+                <viewController id="qEv-6u-fke" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsq-FP-Qog">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CE5-8A-tkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2XC-SR-nxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="749"/>
         </scene>
     </scenes>
     <resources>

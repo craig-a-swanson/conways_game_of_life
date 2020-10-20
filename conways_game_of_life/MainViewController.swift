@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
         }
         timer = Timer.scheduledTimer(timeInterval: 0.33, target: self, selector: #selector(callUpdateGrid), userInfo: nil, repeats: true)
         isRunning = true
+        cellGrid.isEnabled = false
     }
     
     // Stepping from generation to generation for each button tap
@@ -44,6 +45,7 @@ class MainViewController: UIViewController {
             return
         }
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(callUpdateGrid), userInfo: nil, repeats: false)
+        cellGrid.isEnabled = false
     }
     
     @IBAction func clearGrid(_ sender: Any) {
@@ -54,6 +56,7 @@ class MainViewController: UIViewController {
         generation = 0
         cellGrid.clearGrid()
         generationCountLabel.text = String(generation)
+        cellGrid.isEnabled = true
     }
     
     // MARK: - Methods
