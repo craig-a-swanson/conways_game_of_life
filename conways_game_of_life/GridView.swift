@@ -10,7 +10,7 @@ import UIKit
 class GridView: UIControl {
 
     // MARK: - Properties
-    var cellGridController = CellGridController()
+    var cellGridController: CellGridController?
 
     // array of labels used to change colors and keep track of indexes via labels' tag properties
     private var labelArray: [UILabel] = []
@@ -23,12 +23,12 @@ class GridView: UIControl {
     // MARK: - Initialize (draw) the grid
     override func draw(_ rect: CGRect) {
 
-        let currentGenArray = cellGridController.currentGenArray
+        let currentGenArray = cellGridController!.currentGenArray
         let gridSize: CGFloat = rect.size.width
-        let cellSize: CGFloat = gridSize / CGFloat(cellGridController.cellsPerRow)
+        let cellSize: CGFloat = gridSize / CGFloat(cellGridController!.cellsPerRow)
 
-        for row in stride(from: CGFloat(0), through: CGFloat(cellGridController.cellsPerRow - 1), by: 1) {
-            for column in stride(from: CGFloat(0), through: CGFloat(cellGridController.cellsPerRow - 1), by:1) {
+        for row in stride(from: CGFloat(0), through: CGFloat(cellGridController!.cellsPerRow - 1), by: 1) {
+            for column in stride(from: CGFloat(0), through: CGFloat(cellGridController!.cellsPerRow - 1), by:1) {
 //                create a row of labels with the appropriate size and background color
 //                set the tag on the label equal to Int(row * column)
                 let newCellLabel = UILabel(frame: CGRect(x: column * cellSize, y: row * cellSize, width: cellSize, height: cellSize))
@@ -81,7 +81,7 @@ class GridView: UIControl {
         for cell in labelArray {
             if cell.frame.contains(touchPoint) {
                 let cellIndex = cell.tag
-                cellGridController.currentGenArray[cellIndex].toggle()
+                cellGridController!.currentGenArray[cellIndex].toggle()
                 if cell.backgroundColor == UIColor.clear {
                     cell.backgroundColor = UIColor.black
                 } else {
@@ -94,11 +94,11 @@ class GridView: UIControl {
     
     /// Used to update the grid to the current generation of life; iterates through each cell and checks Bool value
     @objc func updateGrid() {
-        cellGridController.buildNextGenArray()
-        cellGridController.buildCurrentGenArray()
+        cellGridController!.buildNextGenArray()
+        cellGridController!.buildCurrentGenArray()
         for label in labelArray {
             let cellIndex = label.tag
-            if cellGridController.currentGenArray[cellIndex] {
+            if cellGridController!.currentGenArray[cellIndex] {
                 label.backgroundColor = .black
             } else {
                 label.backgroundColor = .clear
@@ -107,7 +107,7 @@ class GridView: UIControl {
     }
     
     func clearGrid() {
-        cellGridController.currentGenArray = Array(repeating: false, count: cellGridController.cellsPerRow * cellGridController.cellsPerRow)
+        cellGridController!.currentGenArray = Array(repeating: false, count: cellGridController!.cellsPerRow * cellGridController!.cellsPerRow)
         updateGrid()
     }
     

@@ -130,4 +130,42 @@ class CellGridController {
         }
     }
 
+    let pulsarArray = [
+        131, 132, 133, 137, 138, 139,
+        179, 184, 186, 191,
+        204, 209, 211, 216,
+        229, 234, 236, 241,
+        256, 257, 258, 262, 263, 264,
+        306, 307, 308, 312, 313, 314,
+        329, 334, 336, 341,
+        354, 359, 361, 366,
+        379, 384, 386, 391,
+        431, 432, 433, 437, 438, 439
+    ]
+
+    let pentadecathlonArray = [
+        184, 209, 233, 235,
+        259, 284, 309, 334,
+        358, 360, 384, 409
+    ]
+
+    let lwssArray = [
+        202, 203, 204, 205,
+        226, 230,
+        255,
+        276, 279
+    ]
+
+    func randomStartingArray() -> [Int] {
+        var tempArray: [Int] = []
+
+        let numberOfAliveCells = Int(0.1 * Double((cellsPerRow * cellsPerRow)))
+        
+        for _ in 1...numberOfAliveCells {
+            let randomIndex = Int.random(in: 0..<(cellsPerRow * cellsPerRow))
+            tempArray.append(randomIndex)
+        }
+        return tempArray
+    }
+
 }

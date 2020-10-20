@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     var isRunning: Bool = false
     var timer = Timer()
     var generation = 0
+    var cellGridController = CellGridController()
 
     // MARK: - Outlet
     @IBOutlet var cellGrid: GridView!
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generationCountLabel.text = String(generation)
+        cellGrid.cellGridController = cellGridController
     }
     
     // MARK: - Actions
