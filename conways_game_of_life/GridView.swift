@@ -106,6 +106,11 @@ class GridView: UIControl {
         }
     }
     
+    func clearGrid() {
+        cellGridController.currentGenArray = Array(repeating: false, count: cellGridController.cellsPerRow * cellGridController.cellsPerRow)
+        updateGrid()
+    }
+    
     // MARK: - Tracking Functions
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         return true

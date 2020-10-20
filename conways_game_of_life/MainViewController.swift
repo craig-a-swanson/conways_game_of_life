@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     var isRunning: Bool = false
     var timer = Timer()
+    var generation = 0
 
     // MARK: - Outlet
     @IBOutlet var cellGrid: GridView!
@@ -43,10 +44,21 @@ class MainViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(callUpdateGrid), userInfo: nil, repeats: false)
     }
     
+    @IBAction func clearGrid(_ sender: Any) {
+        if(isRunning) {
+            timer.invalidate()
+            isRunning = false
+        }
+        generation = 0
+        cellGrid.clearGrid()
+    }
+    
     // MARK: - Methods
-    /// Selector for the timer, only use is to call the method from the cellGrid file.
+    /// Selector for the timer; call the method from the cellGrid file and increment gen.
     @objc func callUpdateGrid() {
         cellGrid.updateGrid()
+        // increment generation number
+        generation += 1
     }
     /*
     // MARK: - Navigation

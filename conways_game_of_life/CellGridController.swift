@@ -10,8 +10,16 @@ import Foundation
 class CellGridController {
 
     var cellsPerRow: Int = 25
-    var nextGenArray: [Int] = Array(repeating: 0, count: 25*25)
-    var currentGenArray: [Bool] = Array(repeating: false, count: 25*25)
+    lazy var nextGenArray: [Int] = {
+        let newArray = Array(repeating: 0, count: cellsPerRow * cellsPerRow)
+        return newArray
+    }()
+    lazy var currentGenArray: [Bool] = {
+        let newArray = Array(repeating: false, count: cellsPerRow * cellsPerRow)
+        return newArray
+    }()
+//    var nextGenArray: [Int] = Array(repeating: 0, count: 25*25)
+//    var currentGenArray: [Bool] = Array(repeating: false, count: 25*25)
 
     /// Builds the array for the current generation of cells using the values from the next generation array
     func buildCurrentGenArray() {
