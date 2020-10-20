@@ -29,6 +29,15 @@ class MainViewController: UIViewController {
         isRunning = true
     }
     
+    @IBAction func stepSimulation(_ sender: Any) {
+        if(isRunning) {
+            timer.invalidate()
+            isRunning = false
+            return
+        }
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(callUpdateGrid), userInfo: nil, repeats: false)
+    }
+    
     @objc func callUpdateGrid() {
         cellGrid.updateGrid()
     }
