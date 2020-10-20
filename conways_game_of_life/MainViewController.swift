@@ -8,6 +8,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var isRunning: Bool = false
+    var timer = Timer()
 
     @IBOutlet var cellGrid: GridView!
 
@@ -16,11 +19,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func updateCellState(_ sender: GridView) {
-        
+    @IBAction func updateGrid(_ sender: Any) {
+        if(isRunning) {
+            timer.invalidate()
+            isRunning = false
+            return
+        }
+        timer = Timer.scheduledTimer(timeInterval: 0.33, target: self, selector: #selector(callUpdateGrid), userInfo: nil, repeats: true)
+        isRunning = true
     }
     
-    @IBAction func updateGrid(_ sender: Any) {
+    @objc func callUpdateGrid() {
         cellGrid.updateGrid()
     }
     /*
