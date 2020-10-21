@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        cellGrid.layer.borderWidth = 2
         generationCountLabel.text = String(generation)
         cellGrid.cellGridController = cellGridController
     }
