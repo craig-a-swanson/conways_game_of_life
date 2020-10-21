@@ -9,6 +9,7 @@ import Foundation
 
 class CellGridController {
 
+    // MARK: - Properties
     var cellsPerRow: Int = 25
     lazy var nextGenArray: [Int] = {
         let newArray = Array(repeating: 0, count: cellsPerRow * cellsPerRow)
@@ -21,6 +22,7 @@ class CellGridController {
 //    var nextGenArray: [Int] = Array(repeating: 0, count: 25*25)
 //    var currentGenArray: [Bool] = Array(repeating: false, count: 25*25)
 
+    // MARK: - Current Generation Method
     /// Builds the array for the current generation of cells using the values from the next generation array
     func buildCurrentGenArray() {
         for (index, element) in nextGenArray.enumerated() {
@@ -37,6 +39,7 @@ class CellGridController {
         }
     }
 
+    // MARK: - Next Generation Method
     /// Builds the array for the next generation of cells using the values from the current generation array
     func buildNextGenArray() {
         // check to see if the result of index - <number> is negative; if so,
@@ -130,6 +133,7 @@ class CellGridController {
         }
     }
 
+    // MARK: - Initial Grid Samples
     let pulsarArray = [
         131, 132, 133, 137, 138, 139,
         179, 184, 186, 191,

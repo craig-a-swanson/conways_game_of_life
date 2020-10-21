@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ncU-e5-qZc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,21 +88,79 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Starting Layouts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjx-W8-Ze7">
+                                <rect key="frame" x="30" y="578" width="334" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-Kc-FQA">
+                                <rect key="frame" x="40" y="612.5" width="334" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-ab-RVb">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo3-C8-ukU">
+                                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="35"/>
+                                                <state key="normal" title="Pulsar"/>
+                                                <connections>
+                                                    <action selector="pulsarSetup:" destination="ncU-e5-qZc" eventType="touchUpInside" id="HUt-4e-wpM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krh-n9-GTy">
+                                                <rect key="frame" x="169.5" y="0.0" width="164.5" height="35"/>
+                                                <state key="normal" title="Pentadecathlon"/>
+                                                <connections>
+                                                    <action selector="pentadecathlonSetup:" destination="ncU-e5-qZc" eventType="touchUpInside" id="dw2-PX-QKG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-db-jpN">
+                                        <rect key="frame" x="0.0" y="40" width="334" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Z-qk-Wgo">
+                                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="35"/>
+                                                <state key="normal" title="Lightweight Spaceship"/>
+                                                <connections>
+                                                    <action selector="lwssSetup:" destination="ncU-e5-qZc" eventType="touchUpInside" id="XKS-Rn-EgO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-51-Yjb">
+                                                <rect key="frame" x="169.5" y="0.0" width="164.5" height="35"/>
+                                                <state key="normal" title="Random Placement"/>
+                                                <connections>
+                                                    <action selector="randomSetup:" destination="ncU-e5-qZc" eventType="touchUpInside" id="Y1d-W6-tDu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Oum-WW-XIF"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgX-jL-GLC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="DOd-Kc-FQA" secondAttribute="trailing" constant="40" id="1OI-1k-LfW"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="centerX" secondItem="D7N-Uj-Akk" secondAttribute="centerX" id="856-6l-oK4"/>
+                            <constraint firstItem="DOd-Kc-FQA" firstAttribute="top" secondItem="Tjx-W8-Ze7" secondAttribute="bottom" constant="8" id="85Z-Xw-kwb"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="30" id="BPK-gS-G99"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="QrY-NF-7b3" secondAttribute="trailing" constant="30" id="F5R-t2-96N"/>
+                            <constraint firstItem="Tjx-W8-Ze7" firstAttribute="top" secondItem="QrY-NF-7b3" secondAttribute="bottom" constant="25" id="Jld-So-8yM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="gYc-JM-89m" secondAttribute="bottom" id="Jvp-rh-rBa"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="9BV-yZ-k63" secondAttribute="trailing" constant="40" id="Ogo-yU-2Nu"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="20" id="RXA-qn-wka"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="top" secondItem="3R8-Ns-d6T" secondAttribute="bottom" constant="30" id="VRM-sl-yaw"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" id="b6M-u1-aBb"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="3R8-Ns-d6T" secondAttribute="trailing" constant="20" id="dOY-tK-JKC"/>
+                            <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="Tjx-W8-Ze7" secondAttribute="trailing" constant="50" id="eJM-QG-okg"/>
                             <constraint firstItem="9BV-yZ-k63" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="40" id="lH2-sr-2RR"/>
+                            <constraint firstItem="DOd-Kc-FQA" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="40" id="qui-nr-gMp"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="top" secondItem="9BV-yZ-k63" secondAttribute="bottom" constant="30" id="rXL-8k-QdL"/>
+                            <constraint firstItem="Tjx-W8-Ze7" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="30" id="tUa-7x-xDf"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="top" secondItem="hgX-jL-GLC" secondAttribute="top" constant="75" id="vvv-qo-ZZp"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="trailing" secondItem="hgX-jL-GLC" secondAttribute="trailing" id="zUJ-fk-CrS"/>
                         </constraints>

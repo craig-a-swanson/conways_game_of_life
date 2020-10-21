@@ -61,6 +61,21 @@ class MainViewController: UIViewController {
         cellGrid.isEnabled = true
     }
     
+    // Populate grid with a sample layout
+    @IBAction func pulsarSetup(_ sender: Any) {
+    }
+    
+    @IBAction func pentadecathlonSetup(_ sender: Any) {
+    }
+    
+    @IBAction func lwssSetup(_ sender: Any) {
+    }
+    
+    @IBAction func randomSetup(_ sender: Any) {
+    }
+    
+    
+    
     // MARK: - Methods
     /// Selector for the timer; call the method from the cellGrid file and increment gen.
     @objc func callUpdateGrid() {
