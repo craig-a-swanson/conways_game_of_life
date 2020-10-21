@@ -222,15 +222,79 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overpopulation and Underpopulation." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yng-8T-VQB">
+                                <rect key="frame" x="20" y="385.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Birth." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-g8-g3Z">
+                                <rect key="frame" x="20" y="533.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellExample" translatesAutoresizingMaskIntoConstraints="NO" id="a9M-0R-w59">
+                                <rect key="frame" x="157" y="250.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A6M-bd-Wgg"/>
+                                    <constraint firstAttribute="height" constant="100" id="yns-md-mA5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar8-gy-lRO">
+                                <rect key="frame" x="25" y="152.5" width="364" height="78"/>
+                                <string key="text">Each cell (not on a border) has 8 neighbors. A cell's life or death is based on its number of living neighbors. Borders are the boundaries of the universe and life cannot exist beyond it.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If a cell has more than three living neighbors, it dies of overpopulation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOL-yT-rW0">
+                                <rect key="frame" x="25" y="414.5" width="364" height="38"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If a cell has less than two living neighbors, it dies of underpopulation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-Tr-0mC">
+                                <rect key="frame" x="25" y="460.5" width="364" height="38"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If a cell is not living but has exactly three living neighbors, that cell is born and become alive." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-3z-SQ2">
+                                <rect key="frame" x="25" y="562.5" width="364" height="38"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CE5-8A-tkl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="Gm7-g8-g3Z" secondAttribute="trailing" constant="20" id="2em-Vy-tVl"/>
+                            <constraint firstItem="Gm7-g8-g3Z" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="6cq-Ed-KmF"/>
+                            <constraint firstItem="ar8-gy-lRO" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="25" id="6wy-Q2-Su9"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="yng-8T-VQB" secondAttribute="trailing" constant="20" id="HNo-8J-ReR"/>
                             <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="cEb-6w-vxa" secondAttribute="trailing" constant="20" id="KlU-T1-PC7"/>
+                            <constraint firstItem="ar8-gy-lRO" firstAttribute="top" secondItem="K0m-Gb-DLQ" secondAttribute="bottom" constant="15" id="LTu-WS-Cge"/>
+                            <constraint firstItem="a9M-0R-w59" firstAttribute="centerX" secondItem="tsq-FP-Qog" secondAttribute="centerX" id="Mvv-tc-RFV"/>
+                            <constraint firstItem="yng-8T-VQB" firstAttribute="top" secondItem="a9M-0R-w59" secondAttribute="bottom" constant="35" id="Oij-g4-mmw"/>
+                            <constraint firstItem="oR8-3z-SQ2" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="25" id="Oxi-M8-5Ew"/>
                             <constraint firstItem="K0m-Gb-DLQ" firstAttribute="top" secondItem="cEb-6w-vxa" secondAttribute="bottom" constant="20" id="PMj-Vz-oQC"/>
                             <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="K0m-Gb-DLQ" secondAttribute="trailing" constant="20" id="Sb0-gH-QNV"/>
                             <constraint firstItem="K0m-Gb-DLQ" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="Tdg-KQ-qYJ"/>
+                            <constraint firstItem="a9M-0R-w59" firstAttribute="top" secondItem="ar8-gy-lRO" secondAttribute="bottom" constant="20" id="UbZ-EF-vqw"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="oR8-3z-SQ2" secondAttribute="trailing" constant="25" id="UmD-2M-GIE"/>
+                            <constraint firstItem="bEH-Tr-0mC" firstAttribute="top" secondItem="jOL-yT-rW0" secondAttribute="bottom" constant="8" id="VHh-TI-yAk"/>
+                            <constraint firstItem="oR8-3z-SQ2" firstAttribute="top" secondItem="Gm7-g8-g3Z" secondAttribute="bottom" constant="8" id="ZJF-YA-52z"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="ar8-gy-lRO" secondAttribute="trailing" constant="25" id="gw9-tj-Urw"/>
+                            <constraint firstItem="yng-8T-VQB" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="iua-F9-cdX"/>
                             <constraint firstItem="cEb-6w-vxa" firstAttribute="top" secondItem="CE5-8A-tkl" secondAttribute="top" constant="15" id="jMl-qO-e9j"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="jOL-yT-rW0" secondAttribute="trailing" constant="25" id="kS8-xn-bCX"/>
+                            <constraint firstItem="jOL-yT-rW0" firstAttribute="top" secondItem="yng-8T-VQB" secondAttribute="bottom" constant="8" id="o61-gn-qbx"/>
+                            <constraint firstItem="Gm7-g8-g3Z" firstAttribute="top" secondItem="bEH-Tr-0mC" secondAttribute="bottom" constant="35" id="tS1-RM-OWF"/>
+                            <constraint firstItem="jOL-yT-rW0" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="25" id="u5W-BO-efZ"/>
+                            <constraint firstItem="bEH-Tr-0mC" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="25" id="wWT-PF-PEP"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="bEH-Tr-0mC" secondAttribute="trailing" constant="25" id="wgf-0g-TNB"/>
                             <constraint firstItem="cEb-6w-vxa" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="wpy-uf-TC9"/>
                         </constraints>
                     </view>
@@ -241,6 +305,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cellExample" width="154" height="152"/>
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="forward.frame" catalog="system" width="128" height="99"/>
         <image name="gear" catalog="system" width="128" height="119"/>
