@@ -134,6 +134,7 @@ class CellGridController {
     }
 
     // MARK: - Initial Grid Samples
+    // The sample arrays include the index values for alive cells in a 25x25 grid.
     let pulsarArray = [
         131, 132, 133, 137, 138, 139,
         179, 184, 186, 191,

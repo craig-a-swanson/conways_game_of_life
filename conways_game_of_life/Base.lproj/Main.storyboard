@@ -24,25 +24,27 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-NF-7b3">
-                                <rect key="frame" x="30" y="523" width="354" height="30"/>
+                                <rect key="frame" x="100" y="503" width="214" height="22"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG2-NP-T05">
-                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
-                                        <state key="normal" title="Start/Stop"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG2-NP-T05">
+                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="22"/>
+                                        <state key="normal" image="playpause" catalog="system">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="updateGrid:" destination="ncU-e5-qZc" eventType="touchUpInside" id="QDS-zV-UJI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwb-Vj-A86">
-                                        <rect key="frame" x="131.5" y="0.0" width="91" height="30"/>
-                                        <state key="normal" title="Step"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwb-Vj-A86">
+                                        <rect key="frame" x="84.5" y="0.0" width="45" height="22"/>
+                                        <state key="normal" image="forward.frame" catalog="system"/>
                                         <connections>
                                             <action selector="stepSimulation:" destination="ncU-e5-qZc" eventType="touchUpInside" id="etI-Zd-9oZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Sb-IyN">
-                                        <rect key="frame" x="262.5" y="0.0" width="91.5" height="30"/>
-                                        <state key="normal" title="Clear"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Sb-IyN">
+                                        <rect key="frame" x="169.5" y="0.0" width="44.5" height="22"/>
+                                        <state key="normal" image="clear" catalog="system"/>
                                         <connections>
                                             <action selector="clearGrid:" destination="ncU-e5-qZc" eventType="touchUpInside" id="hgx-mL-Pfd"/>
                                         </connections>
@@ -89,13 +91,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Starting Layouts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjx-W8-Ze7">
-                                <rect key="frame" x="30" y="578" width="334" height="26.5"/>
+                                <rect key="frame" x="30" y="562" width="334" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-Kc-FQA">
-                                <rect key="frame" x="40" y="612.5" width="334" height="75"/>
+                                <rect key="frame" x="40" y="596.5" width="334" height="75"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-ab-RVb">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
@@ -140,27 +142,53 @@
                                     <constraint firstAttribute="height" constant="75" id="Oum-WW-XIF"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play/Pause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-GY-W1n">
+                                <rect key="frame" x="87.5" y="525" width="69.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhN-hj-gMz">
+                                <rect key="frame" x="192" y="525" width="30" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-r2-3Ef">
+                                <rect key="frame" x="274.5" y="525" width="34" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgX-jL-GLC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PhN-hj-gMz" firstAttribute="centerX" secondItem="Gwb-Vj-A86" secondAttribute="centerX" id="1BQ-4A-zpr"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="DOd-Kc-FQA" secondAttribute="trailing" constant="40" id="1OI-1k-LfW"/>
                             <constraint firstItem="QrY-NF-7b3" firstAttribute="centerX" secondItem="D7N-Uj-Akk" secondAttribute="centerX" id="856-6l-oK4"/>
                             <constraint firstItem="DOd-Kc-FQA" firstAttribute="top" secondItem="Tjx-W8-Ze7" secondAttribute="bottom" constant="8" id="85Z-Xw-kwb"/>
-                            <constraint firstItem="QrY-NF-7b3" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="30" id="BPK-gS-G99"/>
-                            <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="QrY-NF-7b3" secondAttribute="trailing" constant="30" id="F5R-t2-96N"/>
-                            <constraint firstItem="Tjx-W8-Ze7" firstAttribute="top" secondItem="QrY-NF-7b3" secondAttribute="bottom" constant="25" id="Jld-So-8yM"/>
+                            <constraint firstItem="QrY-NF-7b3" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="100" id="BPK-gS-G99"/>
+                            <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="QrY-NF-7b3" secondAttribute="trailing" constant="100" id="F5R-t2-96N"/>
+                            <constraint firstItem="Tjx-W8-Ze7" firstAttribute="top" secondItem="PhN-hj-gMz" secondAttribute="bottom" constant="20" id="Jld-So-8yM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="gYc-JM-89m" secondAttribute="bottom" id="Jvp-rh-rBa"/>
+                            <constraint firstItem="Mab-GY-W1n" firstAttribute="centerX" secondItem="AG2-NP-T05" secondAttribute="centerX" id="KyV-J7-ddt"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="9BV-yZ-k63" secondAttribute="trailing" constant="40" id="Ogo-yU-2Nu"/>
+                            <constraint firstItem="PhN-hj-gMz" firstAttribute="top" secondItem="QrY-NF-7b3" secondAttribute="bottom" id="P5F-FE-RY3"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="20" id="RXA-qn-wka"/>
-                            <constraint firstItem="QrY-NF-7b3" firstAttribute="top" secondItem="3R8-Ns-d6T" secondAttribute="bottom" constant="30" id="VRM-sl-yaw"/>
+                            <constraint firstItem="QrY-NF-7b3" firstAttribute="top" secondItem="3R8-Ns-d6T" secondAttribute="bottom" constant="10" id="VRM-sl-yaw"/>
+                            <constraint firstItem="gnQ-r2-3Ef" firstAttribute="top" secondItem="QrY-NF-7b3" secondAttribute="bottom" id="Zbp-Zm-G95"/>
+                            <constraint firstItem="gnQ-r2-3Ef" firstAttribute="centerX" secondItem="nhz-Sb-IyN" secondAttribute="centerX" id="aVS-Xi-6cx"/>
+                            <constraint firstItem="Mab-GY-W1n" firstAttribute="top" secondItem="QrY-NF-7b3" secondAttribute="bottom" id="awG-1s-iOa"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" id="b6M-u1-aBb"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="3R8-Ns-d6T" secondAttribute="trailing" constant="20" id="dOY-tK-JKC"/>
                             <constraint firstItem="hgX-jL-GLC" firstAttribute="trailing" secondItem="Tjx-W8-Ze7" secondAttribute="trailing" constant="50" id="eJM-QG-okg"/>
+                            <constraint firstItem="gnQ-r2-3Ef" firstAttribute="centerY" secondItem="PhN-hj-gMz" secondAttribute="centerY" id="fSB-O6-68h"/>
                             <constraint firstItem="9BV-yZ-k63" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="40" id="lH2-sr-2RR"/>
                             <constraint firstItem="DOd-Kc-FQA" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="40" id="qui-nr-gMp"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="top" secondItem="9BV-yZ-k63" secondAttribute="bottom" constant="30" id="rXL-8k-QdL"/>
                             <constraint firstItem="Tjx-W8-Ze7" firstAttribute="leading" secondItem="hgX-jL-GLC" secondAttribute="leading" constant="30" id="tUa-7x-xDf"/>
+                            <constraint firstItem="Mab-GY-W1n" firstAttribute="centerY" secondItem="PhN-hj-gMz" secondAttribute="centerY" id="uvM-vW-x0N"/>
                             <constraint firstItem="3R8-Ns-d6T" firstAttribute="top" secondItem="hgX-jL-GLC" secondAttribute="top" constant="75" id="vvv-qo-ZZp"/>
                             <constraint firstItem="gYc-JM-89m" firstAttribute="trailing" secondItem="hgX-jL-GLC" secondAttribute="trailing" id="zUJ-fk-CrS"/>
                         </constraints>
@@ -191,10 +219,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear" catalog="system" width="128" height="114"/>
+        <image name="forward.frame" catalog="system" width="128" height="99"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="playpause" catalog="system" width="128" height="83"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
         cellGrid.isEnabled = true
     }
     
-    // Populate grid with a sample layout
+    // Populate grid with sample layouts
     @IBAction func pulsarSetup(_ sender: Any) {
         for element in cellGridController.pulsarArray {
             cellGridController.currentGenArray[element] = true
