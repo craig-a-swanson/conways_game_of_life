@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Conway's Game of Life" id="8SS-mT-W1B"/>
@@ -209,8 +209,30 @@
                     <view key="view" contentMode="scaleToFill" id="tsq-FP-Qog">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules for Conway's Game of Life" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEb-6w-vxa">
+                                <rect key="frame" x="20" y="15" width="374" height="81.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A cell's survival depends on its neighbors." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0m-Gb-DLQ">
+                                <rect key="frame" x="20" y="116.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CE5-8A-tkl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="cEb-6w-vxa" secondAttribute="trailing" constant="20" id="KlU-T1-PC7"/>
+                            <constraint firstItem="K0m-Gb-DLQ" firstAttribute="top" secondItem="cEb-6w-vxa" secondAttribute="bottom" constant="20" id="PMj-Vz-oQC"/>
+                            <constraint firstItem="CE5-8A-tkl" firstAttribute="trailing" secondItem="K0m-Gb-DLQ" secondAttribute="trailing" constant="20" id="Sb0-gH-QNV"/>
+                            <constraint firstItem="K0m-Gb-DLQ" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="Tdg-KQ-qYJ"/>
+                            <constraint firstItem="cEb-6w-vxa" firstAttribute="top" secondItem="CE5-8A-tkl" secondAttribute="top" constant="15" id="jMl-qO-e9j"/>
+                            <constraint firstItem="cEb-6w-vxa" firstAttribute="leading" secondItem="CE5-8A-tkl" secondAttribute="leading" constant="20" id="wpy-uf-TC9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XC-SR-nxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
