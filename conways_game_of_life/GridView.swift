@@ -13,7 +13,7 @@ class GridView: UIControl {
     var cellGridController: CellGridController?
 
     // array of labels used to change colors and keep track of indexes via labels' tag properties
-    private var labelArray: [UILabel] = []
+    var labelArray: [UILabel] = []
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)

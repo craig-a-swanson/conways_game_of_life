@@ -63,15 +63,31 @@ class MainViewController: UIViewController {
     
     // Populate grid with a sample layout
     @IBAction func pulsarSetup(_ sender: Any) {
+        for element in cellGridController.pulsarArray {
+            cellGridController.currentGenArray[element] = true
+            cellGrid.labelArray[element].backgroundColor = .black
+        }
     }
     
     @IBAction func pentadecathlonSetup(_ sender: Any) {
+        for element in cellGridController.pentadecathlonArray {
+            cellGridController.currentGenArray[element] = true
+            cellGrid.labelArray[element].backgroundColor = .black
+        }
     }
     
     @IBAction func lwssSetup(_ sender: Any) {
+        for element in cellGridController.lwssArray {
+            cellGridController.currentGenArray[element] = true
+            cellGrid.labelArray[element].backgroundColor = .black
+        }
     }
     
     @IBAction func randomSetup(_ sender: Any) {
+        for element in cellGridController.randomStartingArray() {
+            cellGridController.currentGenArray[element] = true
+            cellGrid.labelArray[element].backgroundColor = .black
+        }
     }
     
     
